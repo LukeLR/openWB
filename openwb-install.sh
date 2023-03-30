@@ -87,8 +87,8 @@ fi
 
 echo -n "fix upload limit... "
 for php_dir in /etc/php/*; do
-	sudo /bin/su -c "echo 'upload_max_filesize = 300M' > $phpdir/apache2/conf.d/20-uploadlimit.ini"
-	sudo /bin/su -c "echo 'post_max_size = 300M' >> $phpdir/apache2/conf.d/20-uploadlimit.ini"
+	sudo /bin/su -c "echo 'upload_max_filesize = 300M' > $php_dir/apache2/conf.d/20-uploadlimit.ini"
+	sudo /bin/su -c "echo 'post_max_size = 300M' >> $php_dir/apache2/conf.d/20-uploadlimit.ini"
 	echo "PHP $(basename $php_dir) fixed."
 done
 
