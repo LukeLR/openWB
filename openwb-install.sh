@@ -5,7 +5,8 @@ set -e
 
 echo "install required packages..."
 apt-get update
-apt-get -q -y install vim bc apache2 php php-gd php-curl php-xml php-json libapache2-mod-php jq raspberrypi-kernel-headers i2c-tools git mosquitto mosquitto-clients socat python-pip python3-pip sshpass
+# allow-change-held-packages allows apt to pick python3-pip if python-pip is not available since python2 is deprecated
+apt-get -q -y --allow-change-held-packages install vim bc apache2 php php-gd php-curl php-xml php-json libapache2-mod-php jq raspberrypi-kernel-headers i2c-tools git mosquitto mosquitto-clients socat python-pip python3-pip sshpass
 echo "...done"
 
 echo "check for timezone"
