@@ -3,9 +3,16 @@
 # exit if one of the commands fails
 set -e
 
+pkglist="vim bc apache2 php php-gd php-curl php-xml php-json libapache2-mod-php jq raspberrypi-kernel-headers i2c-tools git mosquitto mosquitto-clients socat python3-pip sshpass"
+
+if (( $(echo "$(cat /etc/debian_version) < 11" | bc) )); then
+	echo "Raspbian buster or earlier detected"
+	pkglist="$pkglist python-pip"
+fi
+
 echo "install required packages..."
 apt-get update
-apt-get -q -y install vim bc apache2 php php-gd php-curl php-xml php-json libapache2-mod-php jq raspberrypi-kernel-headers i2c-tools git mosquitto mosquitto-clients socat python-pip python3-pip sshpass
+apt-get -q -y install $pkglist
 echo "...done"
 
 echo "check for timezone"
