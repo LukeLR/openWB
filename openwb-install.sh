@@ -85,17 +85,12 @@ else
 	echo "EXTRA_OPTS=\"-L 0\"" >> /etc/default/cron
 fi
 
-#prepare for Buster
-echo -n "fix upload limit..."
-if [ -d "/etc/php/7.0/" ]; then
-	echo "OS Stretch"
-	sudo /bin/su -c "echo 'upload_max_filesize = 300M' > /etc/php/7.0/apache2/conf.d/20-uploadlimit.ini"
-	sudo /bin/su -c "echo 'post_max_size = 300M' >> /etc/php/7.0/apache2/conf.d/20-uploadlimit.ini"
-elif [ -d "/etc/php/7.3/" ]; then
-	echo "OS Buster"
-	sudo /bin/su -c "echo 'upload_max_filesize = 300M' > /etc/php/7.3/apache2/conf.d/20-uploadlimit.ini"
-	sudo /bin/su -c "echo 'post_max_size = 300M' >> /etc/php/7.3/apache2/conf.d/20-uploadlimit.ini"
-fi
+echo -n "fix upload limit... "
+for php_dir in /etc/php/*; do
+	sudo /bin/su -c "echo 'upload_max_filesize = 300M' > $phpdir/apache2/conf.d/20-uploadlimit.ini"
+	sudo /bin/su -c "echo 'post_max_size = 300M' >> $phpdir/apache2/conf.d/20-uploadlimit.ini"
+	echo "PHP $(basename $php_dir) fixed."
+done
 
 echo "installing pymodbus"
 sudo pip install  -U pymodbus
