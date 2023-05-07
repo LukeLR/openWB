@@ -8,7 +8,7 @@ import json
 # import struct
 # import codecs
 # import binascii
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 from pymodbus.constants import Endian
 from pymodbus.payload import BinaryPayloadDecoder
 

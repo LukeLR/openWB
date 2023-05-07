@@ -2,7 +2,7 @@
 import sys
 import time
 import struct
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 serial_port = str(sys.argv[1])
 unit_id_1 = int(sys.argv[2])

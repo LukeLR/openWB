@@ -7,7 +7,7 @@ import sys
 # import ConfigParser
 import struct
 # import binascii
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 verbrauchernr = str(sys.argv[1])
 seradd = str(sys.argv[2])

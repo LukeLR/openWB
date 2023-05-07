@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 import os
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 import logging
 from smarthome.smartlog import initlog
 from smarthome.smartret import writeret

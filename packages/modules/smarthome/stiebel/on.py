@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 import logging
 from smarthome.smartlog import initlog
 devicenumber = int(sys.argv[1])

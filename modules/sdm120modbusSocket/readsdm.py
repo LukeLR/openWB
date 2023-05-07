@@ -7,7 +7,7 @@ import time
 # import ConfigParser
 import struct
 # import binascii
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 seradd = str(sys.argv[1])
 sdmid = int(sys.argv[2])

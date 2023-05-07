@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import sys
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 from pymodbus.payload import BinaryPayloadDecoder
 from pymodbus.constants import Endian
 # import math

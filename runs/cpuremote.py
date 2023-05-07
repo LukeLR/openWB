@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import time
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 import argparse
 
 parser = argparse.ArgumentParser()

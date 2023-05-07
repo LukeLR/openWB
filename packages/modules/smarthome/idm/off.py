@@ -3,7 +3,7 @@ import sys
 import os
 import time
 import struct
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 named_tuple = time.localtime()  # getstruct_time
 time_string = time.strftime("%m/%d/%Y, %H:%M:%S idm off.py", named_tuple)

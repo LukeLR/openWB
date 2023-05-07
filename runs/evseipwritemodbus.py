@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 lla = int(sys.argv[1])
 ipadd = str(sys.argv[2])

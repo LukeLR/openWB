@@ -4,7 +4,7 @@ import logging
 import struct
 import codecs
 
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 from helpermodules.cli import run_using_positional_cli_args
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import struct
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 host = '192.168.193.26'
 unit_id = 5

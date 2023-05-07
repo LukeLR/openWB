@@ -2,7 +2,7 @@
 import os
 import os.path
 import struct
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 
 def write_to_ramdisk(file: str, content) -> None:

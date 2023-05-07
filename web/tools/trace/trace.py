@@ -7,7 +7,7 @@ import socket
 import ConfigParser
 import struct
 import binascii
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 ipaddress = str(sys.argv[1])
 start = int(sys.argv[2])

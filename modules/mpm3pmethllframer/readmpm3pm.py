@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import struct
 from pymodbus.transaction import ModbusRtuFramer
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 host = '192.168.193.18'
 unit_id = 5

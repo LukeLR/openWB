@@ -4,7 +4,7 @@ import os
 import struct
 import codecs
 import logging
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 from smarthome.smartlog import initlog
 from smarthome.smartret import writeret
 bp = '/var/www/html/openWB/ramdisk/smarthome_device_'

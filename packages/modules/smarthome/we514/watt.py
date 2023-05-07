@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from pymodbus.transaction import ModbusRtuFramer
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 import sys
 import json
 

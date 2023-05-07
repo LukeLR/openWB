@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import struct
 import codecs
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 from typing import List
 
 from helpermodules.cli import run_using_positional_cli_args

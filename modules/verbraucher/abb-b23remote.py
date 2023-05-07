@@ -8,7 +8,7 @@ import sys
 # import struct
 # import binascii
 import ctypes
-from pymodbus.client.sync import ModbusTcpClient as ModbusClient
+from pymodbus.client import ModbusTcpClient as ModbusClient
 from pymodbus.transaction import ModbusRtuFramer
 
 #Args in var schreiben

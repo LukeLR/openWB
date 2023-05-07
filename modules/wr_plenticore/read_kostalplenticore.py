@@ -30,7 +30,7 @@ import sys
 from ipparser import ipparser
 from pymodbus.payload import BinaryPayloadDecoder
 from pymodbus.constants import Endian
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 from helpermodules.cli import run_using_positional_cli_args
 

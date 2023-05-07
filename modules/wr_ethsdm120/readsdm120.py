@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import struct
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 from typing import List
 
 from helpermodules.cli import run_using_positional_cli_args

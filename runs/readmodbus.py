@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 
 def detect_modbus_usb_port():

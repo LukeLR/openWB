@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from pymodbus.client.sync import ModbusSerialClient
+from pymodbus.client import ModbusSerialClient
 
 seradd = str(sys.argv[1])
 evseid = int(sys.argv[2])

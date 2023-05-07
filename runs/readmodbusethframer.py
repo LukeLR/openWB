@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 from pymodbus.transaction import ModbusRtuFramer
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 
 seradd = str(sys.argv[1])
 modbusid = int(sys.argv[2])

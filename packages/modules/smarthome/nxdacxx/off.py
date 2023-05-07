@@ -3,7 +3,7 @@ import sys
 import os
 import logging
 from smarthome.smartlog import initlog
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 devicenumber = int(sys.argv[1])
 ipadr = str(sys.argv[2])
 uberschuss = int(sys.argv[3])

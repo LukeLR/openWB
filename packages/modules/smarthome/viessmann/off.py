@@ -2,7 +2,7 @@
 import sys
 import os
 import time
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 named_tuple = time.localtime()  # getstruct_time
 time_string = time.strftime("%m/%d/%Y, %H:%M:%S viessmann off.py", named_tuple)
 devicenumber = str(sys.argv[1])
