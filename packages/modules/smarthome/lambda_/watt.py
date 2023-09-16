@@ -6,7 +6,7 @@ import struct
 import codecs
 import logging
 from pymodbus.payload import BinaryPayloadBuilder, Endian
-from pymodbus.client.sync import ModbusTcpClient
+from pymodbus.client import ModbusTcpClient
 from smarthome.smartlog import initlog
 from smarthome.smartret import writeret
 named_tuple = time.localtime()  # getstruct_time
