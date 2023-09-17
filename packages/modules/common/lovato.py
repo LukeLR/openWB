@@ -27,7 +27,7 @@ class Lovato(AbstractCounter):
             0x0025, [ModbusDataType.INT_32]*3, unit=self.id)]
 
     def get_frequency(self) -> float:
-        frequency = self.client.read_input_registers(0x0031, ModbusDataType.INT_32, unit=self.id) / 100
+        frequency = self.client.read_input_registers(0x0031, ModbusDataType.INT_32, slave=self.id) / 100
         if frequency > 100:
             # needed if external measurement clamps connected
             frequency = frequency / 10

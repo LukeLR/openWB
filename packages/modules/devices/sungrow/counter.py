@@ -50,7 +50,7 @@ class SungrowCounter:
             #                                                 wordorder=Endian.Little, unit=unit)
             # powers = [power / 10 for power in powers]
             # log.info("power: " + str(power) + " powers?: " + str(powers))
-        frequency = self.__tcp_client.read_input_registers(5035, ModbusDataType.UINT_16, unit=unit) / 10
+        frequency = self.__tcp_client.read_input_registers(5035, ModbusDataType.UINT_16, slave=unit) / 10
         voltages = self.__tcp_client.read_input_registers(5018, [ModbusDataType.UINT_16] * 3,
                                                           wordorder=Endian.Little, unit=unit)
         voltages = [voltage / 10 for voltage in voltages]

@@ -24,9 +24,9 @@ log.info("devicenr %d ipadr %s ueberschuss %6d try to connect (modbus)"
 client = ModbusTcpClient(ipadr, port=502)
 start = 4122
 if navvers == "2":
-    rr = client.read_input_registers(start, 2, unit=1)
+    rr = client.read_input_registers(start, 2, slave=1)
 else:
-    rr = client.read_holding_registers(start, 2, unit=1)
+    rr = client.read_holding_registers(start, 2, slave=1)
 raw = struct.pack('>HH', rr.getRegister(1), rr.getRegister(0))
 lkw = float(struct.unpack('>f', raw)[0])
 aktpower = int(lkw*1000)

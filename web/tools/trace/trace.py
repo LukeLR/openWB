@@ -19,10 +19,10 @@ time_string = time.strftime("%m/%d/%Y, %H:%M:%S opentrace", named_tuple)
 client = ModbusTcpClient(ipaddress, port=502)
 if func ==  "3":
    print('%s read input register ip %s start %6d len %3d id %s <br/> ' % (time_string,ipaddress,start,length,slaveid ))
-   resp= client.read_input_registers(start,length,unit=slaveid)
+   resp= client.read_input_registers(start,length,slave=slaveid)
 else:
    print('%s read holding register ip %s start %6d len %3d id %s <br/> ' % (time_string,ipaddress,start,length,slaveid ))
-   resp= client.read_holding_registers(start,length,unit=slaveid)
+   resp= client.read_holding_registers(start,length,slave=slaveid)
 i= 0
 while i < length:
    print ('%s start %6d  + %3d inhalt %6d %#4X <br/> ' % (time_string,start,i,resp.registers [i],resp.registers [i]

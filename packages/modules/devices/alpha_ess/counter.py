@@ -53,7 +53,7 @@ class AlphaEssCounter:
         return counter_state
 
     def __get_values_since_v123(self, unit: int) -> CounterState:
-        power = self.__tcp_client.read_holding_registers(0x0021, ModbusDataType.INT_32, unit=unit)
+        power = self.__tcp_client.read_holding_registers(0x0021, ModbusDataType.INT_32, slave=unit)
         exported, imported = [
             val * 10 for val in self.__tcp_client.read_holding_registers(
                 0x0010, [ModbusDataType.INT_32] * 2, unit=unit

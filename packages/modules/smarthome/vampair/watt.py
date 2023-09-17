@@ -45,7 +45,7 @@ if count5 == 0:
     # aktuelle Leistung lesen
     client = ModbusTcpClient(ipadr, port=502)
     start = 2322
-    resp = client.read_input_registers(start, 2, unit=1)
+    resp = client.read_input_registers(start, 2, slave=1)
     value1 = resp.registers[0]
     all = format(value1, '04x')
     aktpower = int(struct.unpack('>h', codecs.decode(all, 'hex'))[0])

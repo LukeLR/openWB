@@ -31,9 +31,9 @@ if os.path.isfile(file_stringpv):
 client = ModbusTcpClient(ipadr, port=502)
 # Test only
 # # start = 3524
-# resp=client.read_input_registers(start,20,unit=1)
+# resp=client.read_input_registers(start,20,slave=1)
 start = 1000
-resp = client.read_holding_registers(start, 20, unit=1)
+resp = client.read_holding_registers(start, 20, slave=1)
 value1 = resp.registers[0]
 all = format(value1, '04x')
 aktpower = int(struct.unpack('>h', codecs.decode(all, 'hex'))[0])

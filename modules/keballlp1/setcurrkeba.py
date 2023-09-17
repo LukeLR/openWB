@@ -47,19 +47,19 @@ newcurr = int(sys.argv[2])
 client = ModbusTcpClient(ipaddress, port=502)
 
 # maxcurrent state 1100
-resp = client.read_holding_registers(1100, 2, unit=255)
+resp = client.read_holding_registers(1100, 2, slave=255)
 decoder = BinaryPayloadDecoder.fromRegisters(resp.registers, byteorder=Endian.Big, wordorder=Endian.Big)
 final = float(decoder.decode_32bit_uint()) / 1000
 oldcurr = int("%.f" % final)
 
 # cable state 1004
-resp = client.read_holding_registers(1004, 2, unit=255)
+resp = client.read_holding_registers(1004, 2, slave=255)
 decoder = BinaryPayloadDecoder.fromRegisters(resp.registers, byteorder=Endian.Big, wordorder=Endian.Big)
 final2 = float(decoder.decode_32bit_uint())
 plugs = "%.f" % final2
 
 # max supported current 1110
-resp = client.read_holding_registers(1110, 2, unit=255)
+resp = client.read_holding_registers(1110, 2, slave=255)
 decoder = BinaryPayloadDecoder.fromRegisters(resp.registers, byteorder=Endian.Big, wordorder=Endian.Big)
 final2 = float(decoder.decode_32bit_uint()) / 1000
 supcur = int("%.f" % final2)

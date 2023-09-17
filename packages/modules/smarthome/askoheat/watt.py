@@ -32,7 +32,7 @@ client = ModbusTcpClient(ipadr, port=502)
 start = 110
 # test
 # start = 3522
-resp = client.read_input_registers(start, 1, unit=1)
+resp = client.read_input_registers(start, 1, slave=1)
 value1 = resp.registers[0]
 all = format(value1, '04x')
 aktpower = int(struct.unpack('>h', codecs.decode(all, 'hex'))[0])
@@ -40,7 +40,7 @@ aktpower = int(struct.unpack('>h', codecs.decode(all, 'hex'))[0])
 start = 638
 #  test
 # start = 3522
-resp = client.read_input_registers(start, 1, unit=1)
+resp = client.read_input_registers(start, 1, slave=1)
 value1 = resp.registers[0]
 all = format(value1, '04x')
 temp0 = int(struct.unpack('>h', codecs.decode(all, 'hex'))[0])

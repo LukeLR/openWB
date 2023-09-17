@@ -36,7 +36,7 @@ class GoodWeCounter:
                 val * -1 for val in self.__tcp_client.read_holding_registers(36005,
                                                                              [ModbusDataType.INT_16]*3,
                                                                              unit=self.__modbus_id)]
-            power = self.__tcp_client.read_holding_registers(36008, ModbusDataType.INT_16, unit=self.__modbus_id) * -1
+            power = self.__tcp_client.read_holding_registers(36008, ModbusDataType.INT_16, slave=self.__modbus_id) * -1
 
             frequency = self.__tcp_client.read_holding_registers(
                 36014, ModbusDataType.UINT_16, unit=self.__modbus_id) / 100

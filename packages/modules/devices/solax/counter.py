@@ -29,7 +29,7 @@ class SolaxCounter:
         with self.__tcp_client:
             power = self.__tcp_client.read_input_registers(70, ModbusDataType.INT_32, wordorder=Endian.Little,
                                                            unit=self.__modbus_id) * -1
-            frequency = self.__tcp_client.read_input_registers(7, ModbusDataType.UINT_16, unit=self.__modbus_id) / 100
+            frequency = self.__tcp_client.read_input_registers(7, ModbusDataType.UINT_16, slave=self.__modbus_id) / 100
             try:
                 powers = [-value for value in self.__tcp_client.read_input_registers(
                     130, [ModbusDataType.INT_32] * 3, wordorder=Endian.Little, unit=self.__modbus_id
